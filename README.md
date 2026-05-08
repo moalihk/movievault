@@ -45,3 +45,9 @@ movievault/
 cd backend
 npm install
 npm run dev
+
+## Future Improvements
+
+- User authentication
+- Movie poster uploads
+- Rating analytics dashboard
