@@ -121,3 +121,7 @@ h1 {
 .card-actions button:first-child:hover {
   background: #15803d;
 }
+
+.container {
+  min-height: 100vh;
+}
