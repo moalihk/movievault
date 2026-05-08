@@ -80,8 +80,8 @@ function MovieForm({
   return (
     <form className="movie-form" onSubmit={handleSubmit}>
       <h2>
-        {editingMovie ? "Edit Movie" : "Add New Movie"}
-      </h2>
+  {editingMovie ? "Update Movie Details" : "Add New Movie"}
+</h2>
 
       <input
         name="title"
