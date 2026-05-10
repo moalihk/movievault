@@ -6,6 +6,8 @@ import {
 } from "../services/api";
 
 import MovieForm from "../components/MovieForm";
+import SearchBar from "../components/SearchBar";
+import MovieList from "../components/MovieList";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -51,6 +53,12 @@ function Home() {
   useEffect(() => {
     fetchMovies();
     fetchGenres();
+
+    const interval = setInterval(() => {
+      fetchMovies();
+    }, 30000);
+
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
@@ -69,12 +77,9 @@ function Home() {
     <div className="container">
       <h1>MovieVault</h1>
 
-      <input
-        className="search-input"
-        type="text"
-        placeholder="Search movies..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
       />
 
       <MovieForm
@@ -84,31 +89,10 @@ function Home() {
         clearEditing={() => setEditingMovie(null)}
       />
 
-      <div className="movie-grid">
-        {filteredMovies.map((movie) => (
-          <div className="movie-card" key={movie._id}>
-            <h2>{movie.title}</h2>
-
-            <p><strong>Director:</strong> {movie.director}</p>
-            <p><strong>Year:</strong> {movie.year}</p>
-            <p><strong>Rating:</strong> {movie.rating}</p>
-            <p><strong>Status:</strong> {movie.watchStatus}</p>
-            <p><strong>Platform:</strong> {movie.streamingPlatform}</p>
-            <p><strong>Genre:</strong> {movie.genre?.name}</p>
-            <p><strong>Mood:</strong> {movie.personalMood}</p>
-
-            <div className="card-actions">
-              <button onClick={() => setEditingMovie(movie)}>
-                Edit
-              </button>
-
-              <button onClick={() => handleDelete(movie._id)}>
-                Delete
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+      <MovieList
+        movies={filteredMovies}
+        handleDelete={handleDelete}
+      />
     </div>
   );
 }
