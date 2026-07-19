@@ -4,3 +4,4 @@ backend/.env
 frontend/dist/
 frontend/.env
 
+MovieVault_Report.pdf

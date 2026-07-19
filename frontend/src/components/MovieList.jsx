@@ -1,6 +1,10 @@
 import MovieCard from "./MovieCard";
 
-function MovieList({ movies, handleDelete }) {
+function MovieList({
+  movies,
+  handleDelete,
+  setEditingMovie
+}) {
   return (
     <div className="movie-grid">
       {movies.map((movie) => (
@@ -8,6 +12,7 @@ function MovieList({ movies, handleDelete }) {
           key={movie._id}
           movie={movie}
           handleDelete={handleDelete}
+          setEditingMovie={setEditingMovie}
         />
       ))}
     </div>

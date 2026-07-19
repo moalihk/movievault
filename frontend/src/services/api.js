@@ -9,3 +9,6 @@ export const deleteMovie = (id) => axios.delete(`${API_URL}/movies/${id}`);
 
 export const getGenres = () => axios.get(`${API_URL}/genres`);
 export const createGenre = (genre) => axios.post(`${API_URL}/genres`, genre);
+
+export const getTopRatedMovies = () => axios.get(`${API_URL}/movies/stats/top-rated`);
+export const getReviewsByMovie = (movieId) => axios.get(`${API_URL}/reviews/movie/${movieId}`);
