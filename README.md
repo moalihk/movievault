@@ -30,19 +30,33 @@ MovieVault is a full-stack MERN web application for managing and reviewing movie
 ## Project Structure
 
 movievault/
-├── backend/
-├── frontend/
-├── controllers/
-├── models/
-├── routes/
-└── src/
+- backend/
+  - controllers/
+  - models/
+  - routes/
+- frontend/
+  - src/
+- README.md
 
 ## Installation
 
 ### Backend
 
-```bash
 cd backend
+npm install
+
+Create a .env file inside the backend folder with:
+
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+
+Then start the backend:
+
+npm run dev
+
+### Frontend
+
+cd frontend
 npm install
 npm run dev
 
