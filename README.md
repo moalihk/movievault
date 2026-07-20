@@ -65,8 +65,4 @@ npm run dev
 - **Application:** [MovieVault Live Website](https://movievault-ten.vercel.app/)
 - **Backend API:** [MovieVault API](https://movievault-jo5c.onrender.com/)
 
-## Future Improvements
 
-- User authentication
-- Movie poster uploads
-- Rating analytics dashboard
