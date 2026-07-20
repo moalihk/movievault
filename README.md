@@ -60,6 +60,11 @@ cd frontend
 npm install
 npm run dev
 
+## Live Demo
+
+- **Application:** [MovieVault Live Website](https://movievault-ten.vercel.app/)
+- **Backend API:** [MovieVault API](https://movievault-jo5c.onrender.com/)
+
 ## Future Improvements
 
 - User authentication
